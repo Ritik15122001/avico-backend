@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch src/index.js",
     "start": "node src/index.js",
-    "seed": "node src/seed.js"
+    "seed": "node src/seed.js",
+    "migrate": "node src/migrate.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "@vercel/blob": "^2.8.0",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
