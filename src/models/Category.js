@@ -1,7 +1,23 @@
 import mongoose from 'mongoose';
 
+const specRowSchema = new mongoose.Schema(
+  { label: { type: String, trim: true }, value: { type: String, trim: true } },
+  { _id: false },
+);
+
+// A model row in a range. `code` + `spec` are all a catalogue line needs; the
+// rest powers the model's detail page (/products/<range>/<model>).
 const modelSchema = new mongoose.Schema(
-  { code: { type: String, required: true, trim: true }, spec: { type: String, default: '' }, image: String },
+  {
+    code: { type: String, required: true, trim: true },
+    spec: { type: String, default: '' },
+    image: String,
+    name: { type: String, default: '', trim: true },
+    summary: { type: String, default: '' },
+    specs: { type: [specRowSchema], default: [] },
+    features: { type: [String], default: [] },
+    newArrival: { type: Boolean, default: false },
+  },
   { _id: false },
 );
 
