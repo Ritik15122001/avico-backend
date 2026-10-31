@@ -11,6 +11,8 @@ const settingsSchema = new mongoose.Schema(
     blurb: { type: String, default: '' },
     phone: { type: String, default: '' },
     phoneHref: { type: String, default: '' },
+    phone2: { type: String, default: '' },
+    phoneHref2: { type: String, default: '' },
     email: { type: String, default: '' },
     address: { type: [String], default: [] },
     social: { type: [{ label: String, href: String, _id: false }], default: [] },
